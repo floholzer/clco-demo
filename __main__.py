@@ -21,7 +21,7 @@ container = storage.BlobContainer(
     public_access=storage.PublicAccess.CONTAINER,  # Enable public access
 )
 # Upload the application code as a zip file to the Blob
-app_code = AssetArchive({".": FileArchive(".")})  # Archive current directory
+app_code = AssetArchive({"web-app": FileArchive("web-app")})  # Archive current directory
 blob = storage.Blob(
     "appzip",
     resource_group_name=resource_group.name,
