@@ -1,7 +1,7 @@
 import pulumi
 from pulumi_azure_native import resources, storage, web
 from pulumi import AssetArchive, FileArchive
-# Create an Azure Resource Group
+
 resource_group = resources.ResourceGroup("resource_group", location="northeurope")
 
 # Create a Storage Account
@@ -44,11 +44,11 @@ blob_url = pulumi.Output.concat(
 app_service_plan = web.AppServicePlan(
     "appserviceplan",
     resource_group_name=resource_group.name,
-    kind="Linux",  # Set to Linux
+    kind="Linux",
     reserved=True,
     sku=web.SkuDescriptionArgs(
         tier="Basic",
-        name="B1",  # Adjust based on requirements
+        name="B1",
     ),
 )
 
