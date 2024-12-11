@@ -1,0 +1,6 @@
+Werkzeug==2.2.2
+Flask
+gunicorn
+flask-htmx
+azure-ai-textanalytics
+azure-core
